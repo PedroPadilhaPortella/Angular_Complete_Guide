@@ -1,0 +1,20 @@
+<section id="tasks">
+  <header>
+    <h2>{{user.name}}'s Tasks</h2>
+    <menu>
+      <button (click)="openAddTaskModal()">Add Task</button>
+    </menu>
+  </header>
+  <ul>
+    @for(task of tasks; track task.id) {
+      <app-task [task]="task" />
+    }
+    @if (tasks.length === 0) {
+      <p class="no-tasks">No tasks asigned for this user!</p>
+    }
+  </ul>
+</section>
+
+@if (isTaskModalOpen) {
+  <app-add-task (onCancel)="closeAddTaskModal()" (onCreate)="createTask($event)"  />
+}
