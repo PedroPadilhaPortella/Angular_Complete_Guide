@@ -1,0 +1,11 @@
+<form id="add-ticket" (submit)="onSubmit(titleInput, requestInput)" #ticketForm>
+  <app-control label="Title">
+    <input type="text" name="title" id="title" #titleInput #control>
+  </app-control>
+  <app-control label="Request">
+    <textarea name="request" id="request" rows="3" #requestInput #control></textarea>
+  </app-control>
+  <p>
+    <button appButton>Submit<span ngProjectAs="icon">⌲</span></button>
+  </p>
+</form>
