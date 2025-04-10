@@ -1,0 +1,21 @@
+<main>
+  <app-learning-resources />
+  <hr />
+  <app-auth />
+
+  <!-- 
+  <ng-template appAuth="admin">
+    <p>You're logged in as an Administrator!</p>
+  </ng-template> 
+  -->
+
+  <p *appAuth="'admin'" appAnalytics class="protected-content admin">
+    You're logged in as an Administrator!
+  </p>
+  <p *appAuth="'user'" appAnalytics class="protected-content authenticated">
+    You're logged in as an Regular User!
+  </p>
+  <p *appAuth="'guest'" appAnalytics class="protected-content unauthenticated">
+    You're logged in as an Guest!
+  </p>
+</main>
